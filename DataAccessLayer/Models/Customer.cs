@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Text.Json.Serialization;
 
-namespace DataAccessLayer;
+namespace DataAccessLayer.Models;
 
 public partial class Customer
 {
@@ -18,6 +17,6 @@ public partial class Customer
     public byte? CustomerStatus { get; set; }
 
     public string? Password { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<BookingReservation> BookingReservations { get; set; } = new List<BookingReservation>();
 }

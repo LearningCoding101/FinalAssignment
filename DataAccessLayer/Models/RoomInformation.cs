@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Text.Json.Serialization;
 
-namespace DataAccessLayer;
+namespace DataAccessLayer.Models;
 
 public partial class RoomInformation
 {
@@ -18,7 +17,7 @@ public partial class RoomInformation
     public byte? RoomStatus { get; set; }
 
     public decimal? RoomPricePerDay { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<BookingDetail> BookingDetails { get; set; } = new List<BookingDetail>();
 
     public virtual RoomType RoomType { get; set; } = null!;

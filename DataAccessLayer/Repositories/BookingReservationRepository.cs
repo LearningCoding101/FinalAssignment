@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataAccessLayer.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Repositories
 {
@@ -15,42 +11,42 @@ namespace DataAccessLayer.Repositories
         {
             _context = context;
         }
-        public List<BookingReservation> GetAll()
+        public async Task<IEnumerable<BookingReservation>> GetAll()
         {
-            return _context.BookingReservations.ToList();
+            return await _context.BookingReservations.ToListAsync();
         }
 
-        public BookingReservation? GetById(int bookingReservationId)
+        public async Task<BookingReservation?> GetById(int bookingReservationId)
         {
-            return _context.BookingReservations.Find(bookingReservationId);
+            return await _context.BookingReservations.FindAsync(bookingReservationId);
         }
 
-        public List<BookingReservation> GetReservationsByCustomerId(int customerId)
+        public async Task<IEnumerable<BookingReservation>> GetReservationsByCustomerId(int customerId)
         {
-            return _context.BookingReservations
+            return await _context.BookingReservations
                            .Where(br => br.CustomerId == customerId)
-                           .ToList();
+                           .ToListAsync();
         }
 
-        public void Add(BookingReservation bookingReservation)
+        public async Task Add(BookingReservation bookingReservation)
         {
             _context.BookingReservations.Add(bookingReservation);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(BookingReservation bookingReservation)
+        public async Task Update(BookingReservation bookingReservation)
         {
             _context.Update(bookingReservation);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(int bookingReservationId)
+        public async Task Delete(int bookingReservationId)
         {
-            var bookingReservation = _context.BookingReservations.Find(bookingReservationId);
+            var bookingReservation = await _context.BookingReservations.FindAsync(bookingReservationId);
             if (bookingReservation != null)
             {
                 _context.BookingReservations.Remove(bookingReservation);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
     }

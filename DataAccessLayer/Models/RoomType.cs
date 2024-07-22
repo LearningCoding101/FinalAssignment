@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Text.Json.Serialization;
 
-namespace DataAccessLayer;
+namespace DataAccessLayer.Models;
 
 public partial class RoomType
 {
@@ -12,6 +11,6 @@ public partial class RoomType
     public string? TypeDescription { get; set; }
 
     public string? TypeNote { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<RoomInformation> RoomInformations { get; set; } = new List<RoomInformation>();
 }
