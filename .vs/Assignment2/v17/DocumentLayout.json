@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "D:\\workingPRN\\Assignment2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\repositories\\authenticaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\authenticaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\repositories\\bookingdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\bookingdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\repositories\\bookingreservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\bookingreservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\repositories\\roomtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\roomtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\repositories\\roomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\roomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\fuminihotelmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\fuminihotelmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\roominformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\roominformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|d:\\workingprn\\assignment2\\dataaccesslayer\\dataaccesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{285F811E-ED82-40BF-8536-00D282AF6DE8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\dataaccesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5895BB91-BF52-45B9-90B2-ADCA83E65965}|BusinessLayer\\BusinessLayer.csproj|d:\\workingprn\\assignment2\\businesslayer\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5895BB91-BF52-45B9-90B2-ADCA83E65965}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,8 +66,138 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthenticateRepository.cs",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\AuthenticateRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\AuthenticateRepository.cs",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\AuthenticateRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\AuthenticateRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB8AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T12:20:29.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookingDetailRepository.cs",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\BookingDetailRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\BookingDetailRepository.cs",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\BookingDetailRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\BookingDetailRepository.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAiwC0AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T12:18:49.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookingReservationRepository.cs",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\BookingReservationRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\BookingReservationRepository.cs",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\BookingReservationRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\BookingReservationRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T12:04:05.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\CustomerRepository.cs",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\CustomerRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\CustomerRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T11:59:22.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\appsettings.json",
+              "RelativeDocumentMoniker": "DataAccessLayer\\appsettings.json",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\appsettings.json",
+              "RelativeToolTip": "DataAccessLayer\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-22T11:42:58.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoomTypeRepository.cs",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\RoomTypeRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\RoomTypeRepository.cs",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\RoomTypeRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\RoomTypeRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAIwCQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T11:56:28.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RoomInformation.cs",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\RoomInformation.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\RoomInformation.cs",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\RoomInformation.cs",
+              "RelativeToolTip": "DataAccessLayer\\RoomInformation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T11:51:04.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoomRepository.cs",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\RoomRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\RoomRepository.cs",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Repositories\\RoomRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\RoomRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T11:47:15.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FuminiHotelManagementContext.cs",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\FuminiHotelManagementContext.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\FuminiHotelManagementContext.cs",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\FuminiHotelManagementContext.cs",
+              "RelativeToolTip": "DataAccessLayer\\FuminiHotelManagementContext.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAUwDkAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T11:42:35.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DataAccessLayer",
+              "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\DataAccessLayer.csproj",
+              "RelativeDocumentMoniker": "DataAccessLayer\\DataAccessLayer.csproj",
+              "ToolTip": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\DataAccessLayer.csproj",
+              "RelativeToolTip": "DataAccessLayer\\DataAccessLayer.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-22T11:38:33.465Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -62,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\workingPRN\\Assignment2\\BusinessLayer\\Class1.cs",
               "RelativeDocumentMoniker": "BusinessLayer\\Class1.cs",
@@ -75,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\workingPRN\\Assignment2\\DataAccessLayer\\Class1.cs",
               "RelativeDocumentMoniker": "DataAccessLayer\\Class1.cs",
@@ -83,22 +253,24 @@
               "RelativeToolTip": "DataAccessLayer\\Class1.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T07:45:33.382Z"
+              "WhenOpened": "2024-07-22T07:45:33.382Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\workingPRN\\Assignment2\\Assignment2\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Assignment2\\MainWindow.xaml",
               "ToolTip": "D:\\workingPRN\\Assignment2\\Assignment2\\MainWindow.xaml",
               "RelativeToolTip": "Assignment2\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-22T07:41:58.684Z"
+              "WhenOpened": "2024-07-22T07:41:58.684Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\workingPRN\\Assignment2\\Assignment2\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Assignment2\\MainWindow.xaml.cs",
@@ -106,7 +278,8 @@
               "RelativeToolTip": "Assignment2\\MainWindow.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T07:41:55.515Z"
+              "WhenOpened": "2024-07-22T07:41:55.515Z",
+              "EditorCaption": ""
             }
           ]
         }
