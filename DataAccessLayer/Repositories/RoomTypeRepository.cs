@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataAccessLayer.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Repositories
 {
@@ -14,35 +10,35 @@ namespace DataAccessLayer.Repositories
         {
             _context = context;
         }
-        public List<RoomType> GetAll()
+        public async Task<IEnumerable<RoomType>> GetAll()
         {
-            return _context.RoomTypes.ToList();
+            return await _context.RoomTypes.ToListAsync();
         }
 
-        public RoomType? GetById(int roomTypeId)
+        public async Task<RoomType?> GetById(int roomTypeId)
         {
-            return _context.RoomTypes.Find(roomTypeId);
+            return await _context.RoomTypes.FindAsync(roomTypeId);
         }
 
-        public void Add(RoomType roomType)
+        public async Task Add(RoomType roomType)
         {
             _context.RoomTypes.Add(roomType);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(RoomType roomType)
+        public async Task Update(RoomType roomType)
         {
             _context.Update(roomType);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(int roomTypeId)
+        public async Task Delete(int roomTypeId)
         {
-            var roomType = _context.RoomTypes.Find(roomTypeId);
+            var roomType = await _context.RoomTypes.FindAsync(roomTypeId);
             if (roomType != null)
             {
                 _context.RoomTypes.Remove(roomType);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
     }

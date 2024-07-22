@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataAccessLayer.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Repositories
 {
@@ -15,36 +11,45 @@ namespace DataAccessLayer.Repositories
             _context = context;
 
         }
-        public List<Customer> GetAll()
+        public async Task<IEnumerable<Customer>> GetAll()
         {
-            return _context.Customers.ToList();
+            return await _context.Customers.ToListAsync();
         }
 
-        public Customer? GetById(int customerId)
+        public async Task<Customer?> GetById(int customerId)
         {
-            return _context.Customers.Find(customerId);
+            return await _context.Customers.FirstOrDefaultAsync(c => c.CustomerId == customerId);
         }
 
-        public void Add(Customer customer)
+        public async Task Add(Customer customer)
         {
             _context.Customers.Add(customer);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(Customer customer)
+        public async Task Update(Customer customer)
         {
             _context.Update(customer);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(int customerId)
+        public async Task Delete(int customerId)
         {
-            var customer = _context.Customers.Find(customerId);
+            var customer = await _context.Customers.FindAsync(customerId);
             if (customer != null)
             {
                 _context.Customers.Remove(customer);
                 _context.SaveChanges();
             }
+        }
+
+        public async Task<IEnumerable<Customer?>> SearchCustomer(string keyword)
+        {
+            return await _context.Customers
+                .Where(c =>
+                !string.IsNullOrEmpty(c.CustomerFullName) && c.CustomerFullName.Contains(keyword)
+                || !string.IsNullOrEmpty(c.EmailAddress) && c.EmailAddress.Contains(keyword))
+                .ToListAsync();
         }
     }
 }

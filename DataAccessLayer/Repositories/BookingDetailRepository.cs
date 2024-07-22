@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataAccessLayer.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Repositories
 {
@@ -15,35 +11,35 @@ namespace DataAccessLayer.Repositories
         {
             _context = context;
         }
-        public List<BookingDetail> GetAll()
+        public async Task<IEnumerable<BookingDetail>> GetAll()
         {
-            return _context.BookingDetails.ToList();
+            return await _context.BookingDetails.ToListAsync();
         }
 
-        public BookingDetail? GetById(int id)
+        public async Task<BookingDetail?> GetById(int id)
         {
-            return _context.BookingDetails.Find(id);
+            return await _context.BookingDetails.FindAsync(id);
         }
 
-        public void Add(BookingDetail bookingDetail)
+        public async Task Add(BookingDetail bookingDetail)
         {
             _context.BookingDetails.Add(bookingDetail);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(BookingDetail bookingDetail)
+        public async Task Update(BookingDetail bookingDetail)
         {
             _context.Update(bookingDetail);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(int bookingReservationId)
+        public async Task Delete(int bookingReservationId)
         {
-            var bookingDetails = _context.BookingDetails.Where(bd => bd.BookingReservationId == bookingReservationId).ToList();
+            var bookingDetails = await _context.BookingDetails.Where(bd => bd.BookingReservationId == bookingReservationId).ToListAsync();
             if (bookingDetails.Any())
             {
                 _context.BookingDetails.RemoveRange(bookingDetails);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
     }

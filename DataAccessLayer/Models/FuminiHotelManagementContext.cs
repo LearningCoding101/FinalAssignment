@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace DataAccessLayer;
+namespace DataAccessLayer.Models;
 
 public partial class FuminiHotelManagementContext : DbContext
 {
@@ -33,7 +33,7 @@ public partial class FuminiHotelManagementContext : DbContext
                     .Build();
         var strConn = config["ConnectionStrings:DefaultConnectionStringDB"];
 
-        return strConn;
+        return strConn!;
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
