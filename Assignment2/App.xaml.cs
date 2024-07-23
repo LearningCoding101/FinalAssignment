@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,7 +26,7 @@ namespace Assignment2 {
                 .ConfigureServices((context, services) => {
                     var connectionString = context.Configuration.GetConnectionString("DefaultConnectionStringDB");
                     services.AddDbContext<FuminiHotelManagementContext>(options => {
-                        options.UseSqlServer(connectionString);
+                        options.UseSqlServer(connectionString, sqlOptions => sqlOptions.EnableRetryOnFailure());
                     });
 
                     RegisterRepositories(services);
@@ -60,7 +59,7 @@ namespace Assignment2 {
         }
 
         private void OnLoginSuccessEvent(string role) {
-            Window window = null;
+            Window? window = null;
             if (role == "ADMIN") {
                 window = _host.Services.GetRequiredService<AdminWindow>();
             } else if (role == "USER") {

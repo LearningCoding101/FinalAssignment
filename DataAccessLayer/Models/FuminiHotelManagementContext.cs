@@ -37,7 +37,7 @@ public partial class FuminiHotelManagementContext : DbContext
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(GetConnectionString());
+        => optionsBuilder.UseSqlServer(GetConnectionString(), options => options.EnableRetryOnFailure());
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
