@@ -7,21 +7,54 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\Admin\AdminWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\Pages\BookingManagePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\Pages\CustomerManagePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\Pages\RoomDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\Pages\RoomManagePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Authentication\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Authentication\RegisterWindow.xaml.cs">
+    <Compile Update="View\CustomerView\CustomerMainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Page Update="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\Pages\BookingManagePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\Pages\CustomerManagePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\Pages\RoomDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\Pages\RoomManagePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Authentication\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Authentication\RegisterWindow.xaml">
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CustomerView\CustomerMainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
