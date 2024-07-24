@@ -13,7 +13,7 @@ namespace DataAccessLayer.Repositories
         }
         public async Task<IEnumerable<BookingDetail>> GetAll()
         {
-            return await _context.BookingDetails.ToListAsync();
+            return await _context.BookingDetails.Include(r => r.BookingReservation).ToListAsync();
         }
 
         public async Task<BookingDetail?> GetById(int id)
@@ -42,5 +42,14 @@ namespace DataAccessLayer.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<IEnumerable<BookingDetail>> GetBookingsByCustomerId(int customerId) {
+            return await _context.BookingDetails
+                                 .Include(bd => bd.BookingReservation)
+                                 .Include(bd => bd.Room)
+                                 .Where(bd => bd.BookingReservation.CustomerId == customerId)
+                                 .ToListAsync();
+        }
+
     }
 }

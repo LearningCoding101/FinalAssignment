@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services;
+﻿using Assignment2.View.Admin;
+using BusinessLayer.Services;
 using DataAccessLayer.Models;
 using Microsoft.Identity.Client.NativeInterop;
 using System;
@@ -25,7 +26,7 @@ namespace Assignment2 {
 
         private readonly IAuthenticationService _authenticationService;
 
-        public delegate void LoginSuccessHandler(string role);
+        public delegate void LoginSuccessHandler(string role, int id);
 
         // Define an event based on the delegate
         public event LoginSuccessHandler LoginSuccessEvent;
@@ -60,13 +61,12 @@ namespace Assignment2 {
                     var customer = await _authenticationService.Login(textBoxEmail.Text, passwordBox.Password);
                     if (customer != null) {
                         string role = _authenticationService.GetUserRole(customer.EmailAddress);
-                        LoginSuccessEvent?.Invoke(role);
-                        Close();
+                        int id = customer.CustomerId;
+                        LoginSuccessEvent?.Invoke(role, id);
                     } else {
                         errormessage.Text = "Please enter existing email/password !!";
                     }
                 } catch (Exception ex) {
-                    // Handle any unexpected errors
                     errormessage.Text = $"An error occurred: {ex.Message}";
                 }
 
@@ -77,6 +77,11 @@ namespace Assignment2 {
             this.WindowState = WindowState.Minimized;
         }
 
+        public void SubscribeToLogoutEvent(AdminWindow adminWindow) {
+            adminWindow.LogoutEvent += ShowLoginWindowOnLogout;
+        }
 
+        private void ShowLoginWindowOnLogout() {
+        }
     }
 }

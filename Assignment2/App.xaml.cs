@@ -1,7 +1,9 @@
-﻿using Assignment2.Services;
+﻿using Assignment2.Factory;
+using Assignment2.Services;
 using Assignment2.View.Admin;
 using Assignment2.View.Admin.Pages;
 using Assignment2.View.CustomerView;
+using Assignment2.View.CustomerView.Pages;
 using BusinessLayer.Services;
 using DataAccessLayer.Models;
 using DataAccessLayer.Repositories;
@@ -41,14 +43,20 @@ namespace Assignment2 {
 
                     services.AddSingleton<INavigationService, NavigationService>();
                     services.AddSingleton<IWindowNavigationService, WindowNavigationService>();
+                    // Register factory delegate
+                    services.AddTransient<CustomerMainWindowFactory>(provider =>
+                        (serviceProvider, customerId) => new CustomerMainWindow(serviceProvider, customerId));
                 })
                 .Build();
         }
 
         protected override async void OnStartup(StartupEventArgs e) {
             await _host.StartAsync();
-            var loginWindow = _host.Services.GetRequiredService<AdminWindow>();
-            //loginWindow.LoginSuccessEvent += OnLoginSuccessEvent;
+            var loginWindow = _host.Services.GetRequiredService<LoginWindow>();
+            var adminWindow = _host.Services.GetRequiredService<AdminWindow>();
+            loginWindow.SubscribeToLogoutEvent(adminWindow);
+
+            loginWindow.LoginSuccessEvent += OnLoginSuccessEvent;
             loginWindow.Show();
             base.OnStartup(e);
         }
@@ -59,16 +67,17 @@ namespace Assignment2 {
             base.OnExit(e);
         }
 
-        private void OnLoginSuccessEvent(string role) {
+        private void OnLoginSuccessEvent(string role, int id) {
             Window window = null;
             if (role == "ADMIN") {
                 window = _host.Services.GetRequiredService<AdminWindow>();
             } else if (role == "USER") {
-                window = _host.Services.GetRequiredService<CustomerMainWindow>();
+                var factory = _host.Services.GetRequiredService<CustomerMainWindowFactory>();
+                window = factory(_host.Services, id);
             }
 
             if (window != null) {
-                window.Show();
+                window.ShowDialog();
             }
         }
 
@@ -89,6 +98,7 @@ namespace Assignment2 {
 
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IRoomService, RoomService>();
+            services.AddTransient<IBookingService, BookingService>();
             services.AddSingleton<IAuthenticationService, AuthenticationService>();
         }
 
@@ -99,6 +109,11 @@ namespace Assignment2 {
             services.AddTransient<RoomManagePage>();
             services.AddTransient<CustomerMainWindow>();
             services.AddTransient<RoomDialog>();
+            services.AddTransient<BookingManagePage>();
+            services.AddTransient<ReservationManage>();
+            services.AddTransient<RoomsAvailable>();
+            services.AddTransient<BookingDialog>();
+            services.AddTransient<BookingHistory>();
         }
     }
 }

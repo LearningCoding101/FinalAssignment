@@ -4,15 +4,19 @@ namespace BusinessLayer.Services
 {
     public interface IBookingService
     {
-        Task AddBooking(int roomId, DateTime startDate, DateTime endDate, decimal actualPrice, int customerId);
+        Task AddBooking(decimal? totalPrice, int customerId, List<BookingDetail> bookingDetails);
 
         Task UpdateBooking(BookingReservation reservation, BookingDetail bookingDetail);
 
-        Task<bool> CancelBooking(int bookingReservationId);
+        Task<string> CheckIn(BookingReservation reservation);
+
+        Task<string> CheckOut(BookingReservation reservation);
+
+        Task<string> CancelBooking(BookingReservation reservation);
 
         Task<IEnumerable<BookingReservation>> GetAllBookings();
 
-        Task<IEnumerable<BookingReservation>> GetBookingsByCustomerId(int customerId);
+        Task<IEnumerable<BookingDetail>> GetBookingsByCustomerId(int customerId);
 
         Task<BookingReservation?> GetBookingReservationById(int bookingReservationId);
 

@@ -12,7 +12,7 @@ namespace DataAccessLayer.Repositories
         }
         public async Task<IEnumerable<RoomInformation>> GetAll()
         {
-            return await _context.RoomInformations.ToListAsync();
+            return await _context.RoomInformations.Include(t => t.RoomType).ToListAsync();
         }
 
         public async Task<RoomInformation?> GetById(int roomId)

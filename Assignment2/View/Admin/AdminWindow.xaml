@@ -116,6 +116,8 @@
                         <Button Content="Customer" Style="{StaticResource BaseButtonStyle}" Margin="10" Click="CustomerButton_Click"/>
                         <Button Content="Room" Style="{StaticResource BaseButtonStyle}" Margin="10" Click="RoomButton_Click"/>
                         <Button Content="Booking" Style="{StaticResource BaseButtonStyle}" Margin="10" Click="BookingButton_Click"/>
+                        <Button Content="Reservation" Style="{StaticResource BaseButtonStyle}" Margin="10" Click="ReservationButton_Click" />
+                        <Button Content="Log out" Style="{StaticResource LogoutButtonStyle}"  Margin="10" Click="LogoutButton_Click"/>
                     </StackPanel>
 
                     <ContentControl x:Name="MainContentControl" Grid.Column="1"/>
