@@ -32,9 +32,9 @@ namespace BusinessLayer.Services
             return await _customerRepository.SearchCustomer(keyword);
         }
 
-        public Task UpdateCustomer(Customer customer)
+        public async Task UpdateCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            await _customerRepository.Update(customer);
         }
     }
 }

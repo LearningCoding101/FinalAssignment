@@ -63,6 +63,7 @@ namespace Assignment2 {
                         string role = _authenticationService.GetUserRole(customer.EmailAddress);
                         int id = customer.CustomerId;
                         LoginSuccessEvent?.Invoke(role, id);
+                        Close();
                     } else {
                         errormessage.Text = "Please enter existing email/password !!";
                     }

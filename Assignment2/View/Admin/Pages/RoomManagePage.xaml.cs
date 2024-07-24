@@ -8,7 +8,6 @@ using System.Windows.Controls;
 namespace Assignment2.View.Admin.Pages {
     public partial class RoomManagePage: UserControl {
         private readonly IRoomService _roomService;
-        private readonly IServiceProvider _serviceProvider;
         public ObservableCollection<RoomInformation> Rooms { get; set; }
 
         public RoomManagePage(IRoomService roomService) {
