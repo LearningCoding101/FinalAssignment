@@ -43,19 +43,28 @@ namespace Assignment2.View.Admin.Pages {
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e) {
             if (ValidateInputs(out string errorMessage)) {
-                RoomInformation room = new RoomInformation() {
-                    RoomNumber = RoomNumberTextBox.Text,
-                    RoomDetailDescription = DescriptionTextBox.Text,
-                    RoomMaxCapacity = int.TryParse(CapacityTextBox.Text, out int quantity) ? quantity : 0,
-                    RoomPricePerDay = decimal.TryParse(PriceTextBox.Text, out decimal price) ? price : 0,
-                    RoomStatus = (byte?) (!byte.TryParse(StatusTextBox.Text, out byte status) ? 0 : status),
-                    RoomTypeId = int.TryParse(RoomTypeComboBox.SelectedValue?.ToString(), out int type) ? type : 0
-                };
                 if (SelectRoom.RoomId == 0) {
+                    RoomInformation room = new RoomInformation() {
+                        RoomNumber = RoomNumberTextBox.Text,
+                        RoomDetailDescription = DescriptionTextBox.Text,
+                        RoomMaxCapacity = int.TryParse(CapacityTextBox.Text, out int quantity) ? quantity : 0,
+                        RoomPricePerDay = decimal.TryParse(PriceTextBox.Text, out decimal price) ? price : 0,
+                        RoomStatus = (byte?) (!byte.TryParse(StatusTextBox.Text, out byte status) ? 0 : status),
+                        RoomTypeId = int.TryParse(RoomTypeComboBox.SelectedValue?.ToString(), out int type) ? type : 0
+                    };
                     await _roomService.AddRoom(room);
                     MessageBox.Show("Add success!");
                 } else {
-                    await _roomService.UpdateRoom(room);
+                    //RoomInformation room = new RoomInformation() {
+
+                    SelectRoom.RoomNumber = RoomNumberTextBox.Text;
+                    SelectRoom.RoomDetailDescription = DescriptionTextBox.Text;
+                    SelectRoom.RoomMaxCapacity = int.TryParse(CapacityTextBox.Text, out int quantity) ? quantity : 0;
+                    SelectRoom.RoomPricePerDay = decimal.TryParse(PriceTextBox.Text, out decimal price) ? price : 0;
+                    SelectRoom.RoomStatus = (byte?) (!byte.TryParse(StatusTextBox.Text, out byte status) ? 0 : status);
+                    SelectRoom.RoomTypeId = int.TryParse(RoomTypeComboBox.SelectedValue?.ToString(), out int type) ? type : 0;
+                    //};
+                    await _roomService.UpdateRoom(SelectRoom);
                     MessageBox.Show("Update success!");
                 }
 
