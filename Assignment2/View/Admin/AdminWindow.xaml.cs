@@ -1,4 +1,5 @@
 ﻿using Assignment2.View.Admin.Pages;
+using BusinessLayer.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,18 @@ namespace Assignment2.View.Admin {
         }
 
         private void BookingButton_Click(object sender, RoutedEventArgs e) {
-            MainContentControl.Content = new BookingManagePage();
+            var bookingManagePage = _serviceProvider.GetRequiredService<BookingManagePage>();
+            MainContentControl.Content = bookingManagePage;
+        }
+
+        private void ReservationButton_Click(object sender, RoutedEventArgs e) {
+            var reservation = _serviceProvider.GetRequiredService<ReservationManage>();
+            MainContentControl.Content = reservation;
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e) {
+            this.Close();
+            var loginWindow = new LoginWindow(_serviceProvider.GetRequiredService<IAuthenticationService>());
         }
     }
 }

@@ -42,63 +42,33 @@ namespace Assignment2.View.Admin.Pages
             dialog.Show();
         }
 
-        private void EditButton_Click(object sender, RoutedEventArgs e)
-        {
-            //if (BookDataGrid.SelectedItem != null) {
-            //    var book = (Book) BookDataGrid.SelectedItem;
-            //    DetailWindow detailWindow = new DetailWindow(book);
-            //    detailWindow.DataChanged += DetailWindow_DataChanged;
-            //    detailWindow.CloseWindow += DetailWindow_Close;
-            //    detailWindow.Show();
-            //    this.Hide();
-            //} else {
-            //    MessageBox.Show("Please select a book to edit.");
-            //}
-            if (RoomInfoDataGrid.SelectedItems != null)
-            {
-                var room = (RoomInformation)RoomInfoDataGrid.SelectedItems;
+        private void EditButton_Click(object sender, RoutedEventArgs e) {
+            if (RoomInfoDataGrid.SelectedItem != null) {
+                var room = (RoomInformation) RoomInfoDataGrid.SelectedItem;
                 var dialog = new RoomDialog(_roomService, room);
-                dialog.DataChanged += DetailWindow_DataChanged!;
-                dialog.CloseWindow += DetailWindow_Close!;
+                dialog.DataChanged += DetailWindow_DataChanged;
+                dialog.CloseWindow += DetailWindow_Close;
                 dialog.Show();
-            }
-            else
-            {
+            } else {
                 MessageBox.Show("Please select a room to edit.");
             }
+
         }
 
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            //if (BookDataGrid.SelectedItem == null) {
-            //    MessageBox.Show("Please select an book to delete.");
-
-            //} else {
-            //    MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this book?", "Confirmation", MessageBoxButton.YesNo);
-            //    if (result == MessageBoxResult.Yes) {
-            //        var book = (Book) BookDataGrid.SelectedItem;
-            //        bookService.DeleteBook(book);
-            //        FillDataGrid();
-            //        BookDataGrid.SelectedItem = null;
-            //    } else {
-            //        BookDataGrid.SelectedItem = null;
-            //    }
-            //}
-            if (RoomInfoDataGrid.SelectedItem == null)
-            {
+        private async void DeleteButton_Click(object sender, RoutedEventArgs e) {
+            if (RoomInfoDataGrid.SelectedItem == null) {
                 MessageBox.Show("Please select a room to delete.");
-            }
-            else
-            {
+            } else {
                 MessageBoxResult result = MessageBox.Show("Are you sure to delete this room?", "Confirmation", MessageBoxButton.YesNo);
-                if (result == MessageBoxResult.Yes)
-                {
+                if (result == MessageBoxResult.Yes) {
                     var room = (RoomInformation) RoomInfoDataGrid.SelectedItem;
-                    _roomService.DeleteRoom(room.RoomId);
+                    await _roomService.DeleteRoom(room.RoomId);
+
                     LoadRooms();
                 }
                 RoomInfoDataGrid.SelectedItem = null;
             }
+
         }
 
         private void DetailWindow_DataChanged(object sender, EventArgs e)

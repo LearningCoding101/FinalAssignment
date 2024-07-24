@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="Assignment2.View.Admin.Pages.RoomManagePage"
+﻿<UserControl x:Class="Assignment2.View.CustomerView.Pages.RoomsAvailable"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" Width="818">
 
     <Grid Background="Transparent">
         <TextBlock Text="Room"
@@ -14,25 +14,14 @@
                    FontFamily="Montserrat"
                    Margin="10"/>
 
-        <StackPanel Orientation="Horizontal" Margin="484,45,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273">
-            <Button x:Name="AddRoomBtn"
-                    Content="Add Room"
-                    Width="80"
+        <StackPanel Orientation="Horizontal" Margin="601,48,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159">
+            <Button x:Name="Reservation"
+                    Content="BOOK THIS ROOM"
+                    Width="149"
                     Margin="5"
-                    Style="{StaticResource CRUDButtonStyle}"
-                    Click="AddButton_Click"/>
-            <Button x:Name="EditRoomBtn"
-                    Content="Edit Room"
-                    Width="80"
-                    Margin="5"
-                    Style="{StaticResource CRUDButtonStyle}"
-                    Click="EditButton_Click"/>
-            <Button x:Name="DeleteRoomBtn"
-                    Content="Delete Room"
-                    Width="80"
-                    Margin="5"
-                    Style="{StaticResource CRUDButtonStyle}"
-                    Click="DeleteButton_Click"/>
+                    Style="{StaticResource BookButtonStyle}"
+                    IsEnabled="{Binding IsAnyRoomSelected}"
+                    Click="BookButton_Click"/>
         </StackPanel>
 
         <DataGrid x:Name="RoomInfoDataGrid" 
@@ -50,15 +39,30 @@
                   SelectionMode="Single">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="" Width="20"/>
-                <DataGridTextColumn Header="ID" Binding="{Binding RoomId}" Width="50"/>
+                <DataGridTextColumn Header="" Width="10"/>
                 <DataGridTextColumn Header="Room Number" Binding="{Binding RoomNumber}" Width="100"/>
-                <DataGridTextColumn Header="Room Detail Description" Binding="{Binding RoomDetailDescription}" Width="340"/>
+                <DataGridTemplateColumn Header="Room Detail Description" Width="370">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding RoomDetailDescription}" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Max Capacity" Binding="{Binding RoomMaxCapacity}" Width="100"/>
                 <DataGridTextColumn Header="Room Type" Binding="{Binding RoomType.RoomTypeName}" Width="100"/>
-                <DataGridTextColumn Header="Status" Binding="{Binding RoomStatus}" Width="100"/>
+                <DataGridTemplateColumn Width="70">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="Choose" HorizontalAlignment="Center"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Click="CheckBox_Click" Tag="{Binding}" HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </UserControl>
+
 

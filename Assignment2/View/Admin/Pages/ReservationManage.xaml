@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Assignment2.View.Admin.Pages.ReservationManage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="450" Width="782">
+    <Grid Background="Transparent">
+        <TextBlock Text="Reservation"
+                Foreground="White"
+                FontSize="24"
+                FontWeight="Bold"
+                FontFamily="Montserrat"
+                Margin="10"/>
+
+        <StackPanel Orientation="Horizontal" Margin="578,32,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="193">
+            <Button x:Name="CheckInButton"
+                    Content="Check In"
+                    Width="80"
+                    Margin="5"
+                    Style="{StaticResource CRUDButtonStyle}"
+                    Click="CheckInButton_Click"/>
+            <Button x:Name="CheckOutButton"
+                    Content="Checkout"
+                    Width="80"
+                    Margin="5"
+                    Style="{StaticResource CRUDButtonStyle}"
+                    Click="CheckOutButton_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="ReservationDataGrid" 
+               AutoGenerateColumns="False" 
+               Margin="10,78,10,10" 
+               CanUserAddRows="False" 
+               IsReadOnly="True"
+               RowBackground="Transparent"
+               AlternatingRowBackground="#9A9A9A"
+               GridLinesVisibility="None"
+               HeadersVisibility="Column"
+               ColumnHeaderHeight="40"
+               RowHeight="40"
+               ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"
+               SelectionMode="Single">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="" Width="20"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding BookingReservationId}" Width="50"/>
+                <DataGridTextColumn Header="Customer ID" Binding="{Binding CustomerId}" Width="120"/>
+                <DataGridTextColumn Header="Customer Name" Binding="{Binding Customer.CustomerFullName}" Width="120"/>
+                <DataGridTextColumn Header="Booking Date" Binding="{Binding BookingDate, StringFormat=yyyy/MM/dd}" Width="150"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding TotalPrice}" Width="120"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding BookingStatus}" Width="180"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

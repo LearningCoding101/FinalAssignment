@@ -13,7 +13,7 @@ namespace DataAccessLayer.Repositories
         }
         public async Task<IEnumerable<BookingReservation>> GetAll()
         {
-            return await _context.BookingReservations.ToListAsync();
+            return await _context.BookingReservations.Include(c => c.Customer).ToListAsync();
         }
 
         public async Task<BookingReservation?> GetById(int bookingReservationId)

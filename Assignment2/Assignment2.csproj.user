@@ -16,6 +16,9 @@
     <Compile Update="View\Admin\Pages\CustomerManagePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Admin\Pages\ReservationManage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Admin\Pages\RoomDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -26,6 +29,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\CustomerView\CustomerMainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\CustomerView\Pages\BookingDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\CustomerView\Pages\BookingHistory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\CustomerView\Pages\RoomsAvailable.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -42,6 +54,9 @@
     <Page Update="View\Admin\Pages\CustomerManagePage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\Admin\Pages\ReservationManage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\Admin\Pages\RoomDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -55,6 +70,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\CustomerView\CustomerMainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CustomerView\Pages\BookingDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CustomerView\Pages\BookingHistory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CustomerView\Pages\RoomsAvailable.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

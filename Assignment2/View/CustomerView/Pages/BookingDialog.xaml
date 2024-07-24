@@ -1,0 +1,54 @@
+﻿<Window x:Class="Assignment2.View.CustomerView.Pages.BookingDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Room Details" Height="400" Width="653"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        >
+
+    <Border CornerRadius="12">
+        <Border.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Images/184305239.jpg" Stretch="None"/>
+        </Border.Background>
+
+        <Border Style="{StaticResource MainBorderStyle}">
+            <Grid>
+                <Label x:Name="DetailWindowMode" Content="" Height="42" Margin="0,10,0,0" VerticalAlignment="Top" Width="551" FontWeight="Heavy" FontSize="30" FontStyle="Italic" HorizontalAlignment="Center"/>
+
+                <Label Content="Room ID" Height="33" Foreground="White" Margin="30,65,538,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="RoomIdTextBox" HorizontalAlignment="Left"  Height="30" Margin="185,66,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="101" TabIndex="0" IsEnabled="False"/>
+
+                <Label Content="Room Number" Height="30" Foreground="White" Margin="30,121,523,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="RoomNumberTextBox" HorizontalAlignment="Left" IsEnabled="False" Height="30" Margin="185,120,0,0" TextWrapping="Wrap"  VerticalContentAlignment="Center" VerticalAlignment="Top" Width="226" TabIndex="1"/>
+
+                <Label Content="From" Height="26" Margin="30,184,491,0" Foreground="White" VerticalAlignment="Top" Width="128"/>
+                <DatePicker x:Name="FromDatePicker" HorizontalAlignment="Left" Height="30" Margin="185,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="156" TabIndex="4"/>
+
+                <Label Content="To" Height="26" Margin="371,0,150,0" Foreground="White" VerticalAlignment="Center" Width="128"/>
+                <DatePicker x:Name="ToDatePicker" HorizontalAlignment="Left" Height="30" Margin="413,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="168" TabIndex="4"/>
+
+                <Label Content="Price" Height="28" Margin="30,248,541,0" Foreground="White" VerticalAlignment="Top" Width="78"/>
+                <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" IsEnabled="False" Height="30" Margin="184,248,0,0" TextWrapping="Wrap"  VerticalContentAlignment="Center" VerticalAlignment="Top" Width="166" TabIndex="5"/>
+
+                <Button x:Name="SaveBtn"
+                    Content="Save Room"
+                    Width="80"
+                    Margin="237,132,332,-122"
+                    Style="{StaticResource CRUDButtonStyle}"
+                    Click="SaveButton_Click"/>
+                <Button x:Name="CloseBtn"
+                    Content="Close"
+                    Width="80"
+                    Margin="355,133,214,-123"
+                    Style="{StaticResource CRUDButtonStyle}"
+                    Click="CloseButton_Click"/>
+
+            </Grid>
+
+        </Border>
+    </Border>
+</Window>
+
