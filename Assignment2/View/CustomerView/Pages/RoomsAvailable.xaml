@@ -20,6 +20,7 @@
                     Width="149"
                     Margin="5"
                     Style="{StaticResource BookButtonStyle}"
+                    IsEnabled="{Binding IsAnyRoomSelected}"
                     Click="BookButton_Click"/>
         </StackPanel>
 

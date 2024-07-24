@@ -4,6 +4,7 @@ using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +22,24 @@ namespace Assignment2.View.CustomerView.Pages {
     /// <summary>
     /// Interaction logic for RoomsAvailable.xaml
     /// </summary>
-    public partial class RoomsAvailable: UserControl {
+    public partial class RoomsAvailable: UserControl, INotifyPropertyChanged{
         private readonly IRoomService _roomService;
         private readonly IBookingService _bookingService;
         private readonly IServiceProvider _serviceProvider;
         private readonly int _customerId;
+        public bool IsAnyRoomSelected
+        {
+            get { return _selectedRooms.Count > 0; }
+        }
         public ObservableCollection<RoomInformation> Rooms { get; set; }
         private List<RoomInformation> _selectedRooms;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        private void NotifyIsAnyRoomSelectedChanged()
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsAnyRoomSelected)));
+        }
 
         public RoomsAvailable(IRoomService roomService, IBookingService bookingService, int customerId) {
             InitializeComponent();
@@ -37,7 +49,7 @@ namespace Assignment2.View.CustomerView.Pages {
             Rooms = new ObservableCollection<RoomInformation>();
             DataContext = this;
             _selectedRooms = new List<RoomInformation>();
-
+            DataContext = this;
             LoadRooms();
         }
 
@@ -77,6 +89,7 @@ namespace Assignment2.View.CustomerView.Pages {
             } else {
                 _selectedRooms.Remove(room);
             }
+            NotifyIsAnyRoomSelectedChanged();
         }
         private void ClearCheckBoxes() {
             foreach (var item in RoomInfoDataGrid.Items) {
@@ -89,6 +102,8 @@ namespace Assignment2.View.CustomerView.Pages {
                 }
             }
             _selectedRooms.Clear();
+            NotifyIsAnyRoomSelectedChanged();
+
         }
 
         private T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject {
