@@ -5,13 +5,15 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Assignment2.View.Admin.Pages {
-    public partial class RoomManagePage: UserControl {
+namespace Assignment2.View.Admin.Pages
+{
+    public partial class RoomManagePage : UserControl
+    {
         private readonly IRoomService _roomService;
-        private readonly IServiceProvider _serviceProvider;
         public ObservableCollection<RoomInformation> Rooms { get; set; }
 
-        public RoomManagePage(IRoomService roomService) {
+        public RoomManagePage(IRoomService roomService)
+        {
             InitializeComponent();
             _roomService = roomService;
             Rooms = new ObservableCollection<RoomInformation>();
@@ -20,20 +22,23 @@ namespace Assignment2.View.Admin.Pages {
             LoadRooms();
         }
 
-        private async void LoadRooms() {
+        private async void LoadRooms()
+        {
             Rooms.Clear();
             var rooms = await _roomService.GetAllRooms();
-            foreach (var room in rooms) {
+            foreach (var room in rooms)
+            {
                 Rooms.Add(room);
             }
             RoomInfoDataGrid.ItemsSource = Rooms;
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e) {
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
             var newRoom = new RoomInformation();
             var dialog = new RoomDialog(_roomService, newRoom);
-            dialog.DataChanged += DetailWindow_DataChanged;
-            dialog.CloseWindow += DetailWindow_Close;
+            dialog.DataChanged += DetailWindow_DataChanged!;
+            dialog.CloseWindow += DetailWindow_Close!;
             dialog.Show();
         }
 
@@ -58,6 +63,7 @@ namespace Assignment2.View.Admin.Pages {
                 if (result == MessageBoxResult.Yes) {
                     var room = (RoomInformation) RoomInfoDataGrid.SelectedItem;
                     await _roomService.DeleteRoom(room.RoomId);
+
                     LoadRooms();
                 }
                 RoomInfoDataGrid.SelectedItem = null;
@@ -65,11 +71,13 @@ namespace Assignment2.View.Admin.Pages {
 
         }
 
-        private void DetailWindow_DataChanged(object sender, EventArgs e) {
+        private void DetailWindow_DataChanged(object sender, EventArgs e)
+        {
             LoadRooms();
             RoomInfoDataGrid.SelectedItem = null;
         }
-        private void DetailWindow_Close(object sender, EventArgs e) {
+        private void DetailWindow_Close(object sender, EventArgs e)
+        {
         }
 
     }

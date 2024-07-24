@@ -1,16 +1,14 @@
 ﻿using BusinessLayer.Services;
 using DataAccessLayer.Models;
-using System;
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 
 namespace Assignment2.View.Admin.Pages {
     public partial class RoomDialog: Window {
-        public event EventHandler DataChanged;
-        public event EventHandler CloseWindow;
+        public event EventHandler DataChanged = null!;
+        public event EventHandler CloseWindow = null!;
         private readonly IRoomService _roomService;
-        public RoomInformation SelectRoom { get; set; }
+        public RoomInformation SelectRoom { get; set; } = null!;
 
         public RoomDialog(IRoomService roomService, RoomInformation selectRoom) {
             InitializeComponent();
@@ -76,7 +74,7 @@ namespace Assignment2.View.Admin.Pages {
 
         private bool ValidateInputs(out string errorMessage) {
             errorMessage = "";
-            string pattern = @"^(?:[A-Z][a-z]*|[A-Z][a-z]*[\W]*)(?:\s[A-Z][a-z]*|[\W])*?$";
+            //string pattern = @"^(?:[A-Z][a-z]*|[A-Z][a-z]*[\W]*)(?:\s[A-Z][a-z]*|[\W])*?$";
 
             if (string.IsNullOrWhiteSpace(DescriptionTextBox.Text) || DescriptionTextBox.Text.Length < 5 || DescriptionTextBox.Text.Length > 500) {
                 errorMessage += "Description must be between 5 and 500 characters long.\n";
