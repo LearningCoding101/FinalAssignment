@@ -103,7 +103,6 @@ namespace Assignment2.View.CustomerView {
         private void LogoutButton_Click(object sender, RoutedEventArgs e) {
             this.Close();
             var loginWindow = new LoginWindow(_serviceProvider.GetRequiredService<IAuthenticationService>());
-            loginWindow.Show();
         }
     }
 }

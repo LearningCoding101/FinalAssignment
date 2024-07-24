@@ -77,11 +77,5 @@ namespace Assignment2 {
             this.WindowState = WindowState.Minimized;
         }
 
-        public void SubscribeToLogoutEvent(AdminWindow adminWindow) {
-            adminWindow.LogoutEvent += ShowLoginWindowOnLogout;
-        }
-
-        private void ShowLoginWindowOnLogout() {
-        }
     }
 }

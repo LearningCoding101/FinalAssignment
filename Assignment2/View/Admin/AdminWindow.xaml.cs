@@ -21,8 +21,6 @@ namespace Assignment2.View.Admin {
     /// </summary>
     public partial class AdminWindow: Window {
         private readonly IServiceProvider _serviceProvider;
-        public delegate void LogoutEventHandler();
-        public event LogoutEventHandler LogoutEvent;
 
         public AdminWindow(IServiceProvider serviceProvider) {
             InitializeComponent();
@@ -64,8 +62,8 @@ namespace Assignment2.View.Admin {
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e) {
-            LogoutEvent?.Invoke();
-            Close();
+            this.Close();
+            var loginWindow = new LoginWindow(_serviceProvider.GetRequiredService<IAuthenticationService>());
         }
     }
 }

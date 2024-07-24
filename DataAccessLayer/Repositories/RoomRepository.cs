@@ -28,7 +28,7 @@ namespace DataAccessLayer.Repositories
 
         public async Task Update(RoomInformation room)
         {
-            _context.Update(room);
+            _context.RoomInformations.Update(room);
             await _context.SaveChangesAsync();
         }
 

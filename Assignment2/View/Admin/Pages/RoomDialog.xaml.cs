@@ -17,8 +17,12 @@ namespace Assignment2.View.Admin.Pages {
             _roomService = roomService;
             if (selectRoom.RoomId == 0) {
                 SelectRoom = selectRoom;
+            } else {
+                LoadData(selectRoom);
+                SelectRoom = selectRoom;
             }
             LoadType();
+
         }
 
         private async void LoadType() {
@@ -26,7 +30,17 @@ namespace Assignment2.View.Admin.Pages {
             RoomTypeComboBox.ItemsSource = types;
             RoomTypeComboBox.DisplayMemberPath = "RoomTypeName";
             RoomTypeComboBox.SelectedValuePath = "RoomTypeId";
-            RoomTypeComboBox.SelectedValue = SelectRoom.RoomTypeId;
+        }
+
+        private void LoadData(RoomInformation r) {
+                RoomIdTextBox.Text = r.RoomId.ToString();
+                RoomIdTextBox.IsEnabled = false;
+                RoomNumberTextBox.Text = r.RoomNumber;
+                DescriptionTextBox.Text = r?.RoomDetailDescription;
+                CapacityTextBox.Text = r?.RoomMaxCapacity.ToString();
+                PriceTextBox.Text = r?.RoomPricePerDay.ToString();
+                StatusTextBox.Text = r?.RoomStatus.ToString();
+                RoomTypeComboBox.SelectedValue = r?.RoomTypeId.ToString();
         }
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e) {
@@ -41,8 +55,10 @@ namespace Assignment2.View.Admin.Pages {
                 };
                 if (SelectRoom.RoomId == 0) {
                     await _roomService.AddRoom(room);
+                    MessageBox.Show("Add success!");
                 } else {
-                    await _roomService.UpdateRoom(SelectRoom);
+                    await _roomService.UpdateRoom(room);
+                    MessageBox.Show("Update success!");
                 }
 
                 DataChanged?.Invoke(this, EventArgs.Empty);

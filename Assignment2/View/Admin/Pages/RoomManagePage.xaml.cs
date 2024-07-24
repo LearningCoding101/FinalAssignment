@@ -38,34 +38,30 @@ namespace Assignment2.View.Admin.Pages {
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e) {
-            //if (BookDataGrid.SelectedItem != null) {
-            //    var book = (Book) BookDataGrid.SelectedItem;
-            //    DetailWindow detailWindow = new DetailWindow(book);
-            //    detailWindow.DataChanged += DetailWindow_DataChanged;
-            //    detailWindow.CloseWindow += DetailWindow_Close;
-            //    detailWindow.Show();
-            //    this.Hide();
-            //} else {
-            //    MessageBox.Show("Please select a book to edit.");
-            //}
+            if (RoomInfoDataGrid.SelectedItem != null) {
+                var room = (RoomInformation) RoomInfoDataGrid.SelectedItem;
+                var dialog = new RoomDialog(_roomService, room);
+                dialog.DataChanged += DetailWindow_DataChanged;
+                dialog.CloseWindow += DetailWindow_Close;
+                dialog.Show();
+            } else {
+                MessageBox.Show("Please select a room to edit.");
+            }
 
         }
 
         private async void DeleteButton_Click(object sender, RoutedEventArgs e) {
-            //if (BookDataGrid.SelectedItem == null) {
-            //    MessageBox.Show("Please select an book to delete.");
-
-            //} else {
-            //    MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this book?", "Confirmation", MessageBoxButton.YesNo);
-            //    if (result == MessageBoxResult.Yes) {
-            //        var book = (Book) BookDataGrid.SelectedItem;
-            //        bookService.DeleteBook(book);
-            //        FillDataGrid();
-            //        BookDataGrid.SelectedItem = null;
-            //    } else {
-            //        BookDataGrid.SelectedItem = null;
-            //    }
-            //}
+            if (RoomInfoDataGrid.SelectedItem == null) {
+                MessageBox.Show("Please select a room to delete.");
+            } else {
+                MessageBoxResult result = MessageBox.Show("Are you sure to delete this room?", "Confirmation", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes) {
+                    var room = (RoomInformation) RoomInfoDataGrid.SelectedItem;
+                    await _roomService.DeleteRoom(room.RoomId);
+                    LoadRooms();
+                }
+                RoomInfoDataGrid.SelectedItem = null;
+            }
 
         }
 

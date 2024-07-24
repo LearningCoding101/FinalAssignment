@@ -54,7 +54,6 @@ namespace Assignment2 {
             await _host.StartAsync();
             var loginWindow = _host.Services.GetRequiredService<LoginWindow>();
             var adminWindow = _host.Services.GetRequiredService<AdminWindow>();
-            loginWindow.SubscribeToLogoutEvent(adminWindow);
 
             loginWindow.LoginSuccessEvent += OnLoginSuccessEvent;
             loginWindow.Show();
